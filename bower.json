@@ -1,0 +1,25 @@
+{
+  "name": "mean-zen",
+  "version": "0.0.0",
+  "authors": [
+    "John Maguire <jonnie.maguire@gmail>"
+  ],
+  "description": "Zen-calendar with mean stack",
+  "main": "app.js",
+  "keywords": [
+    "zen",
+    "calendar",
+    "mean",
+    "stack"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.10",
+    "bootstrap-javascript": "~2.3.2",
+    "bootstrap-css": "~3.0.0",
+    "angular-bootstrap": "~0.10.0",
+    "angular-scenario": "~1.2.10",
+    "angular-mocks": "~1.2.10"
+  }
+}
