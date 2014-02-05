@@ -8,6 +8,49 @@ var Contacts = require("../models/ContactSchema.js")("localhost","contact_test")
 
 describe("ContactSchema", function() {
    describe(".add() New Contact", function() {
+   	
+   	/*before(function(done) {
+
+		Contacts.contactModel.remove(function(err) {
+			console.log('collection dropped');
+
+			var testContacts = [
+					{name : "Dave"
+			           	,email : "dave@gmail.com"
+			           	,phone : "+353830310176"}
+			           	,{name : "Jane"
+			           	,email : "jane@gmail.com"
+			           	,phone : "+35385239583"}
+			           	,{name : "Tom"
+			           	,email : "tom@gmail.com"
+			           	,phone : "+35383419586"}
+			           	].reverse();
+			
+			var total = testContacts.length,
+				result = [];
+
+			function saveAll() {
+				var newContact = new Contacts.contactModel(testContacts.pop());
+
+				newContact.save(function(err, saved) {
+					if (err) throw err; //handle error
+
+					result.push(saved[0]);
+
+					if (--total) saveAll();
+					else{
+						done(); // all saved here	
+					} 
+				})
+			}
+			saveAll();
+			
+		});
+
+
+
+	});
+   	*/
 
       it("fgasgag", function(done){
       	var mongo = require('mongoskin');
