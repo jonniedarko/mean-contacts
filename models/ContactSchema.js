@@ -6,9 +6,11 @@ exports = module.exports = function(host, app) {
 	var DB = Mongoose.createConnection(host, app);
 	var contactSchema = new Schema({
 		name : { type : String, required : true}
-		,email : {type : String, required : true, index: {unique: true, dropDups: true}}
+		,email : {type : String, required : true, unique: true}
 		,phone : { type : String, required: true}
-	});
+	}
+	,{strict: true}
+	);
 
 	var contactModel = DB.model('contacts', contactSchema);
 	
@@ -30,9 +32,26 @@ exports = module.exports = function(host, app) {
 
 	}
 
+	var getAll = function(callback){
+		//var contact = new contactModel();
+		contactModel.find({},function(error, data){
+			//console.log('data :'+data);
+			callback(error, data);
+		});
+	}
+	var getUser = function(email, callback){
+		//var contact = new contactModel();
+		contactModel.find({"email": email},function(error, data){
+			//console.log('data :'+data);
+			callback(error, data[0]);
+		});
+	}
+
 	return {
-		contactModel : contactModel,
-		add : add
+		contactModel : contactModel
+		,add : add
+		,getAll : getAll
+		,getUser: getUser
 
 	}
 
