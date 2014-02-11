@@ -14,21 +14,16 @@ block content
 				th Phone
 				th Email
 			tbody
-					tr(ng-repeat="contact in contacts")
-						td
-							| {{ contact.name }}
-						td
-							| {{ contact.phone }}
-						td
-							| {{ contact.email }}
-		form.form-horizontal(novalidate, ng-submit="addNewContact()")
-			div.form-group
-				label.sr-only(for="newContactNameInput") Name
-				input(type="text", id="newContactNameInput", placeholder="Name", ng-model="newContact.name")
-			div.form-group
-				label.sr-only(for="newContactPhoneInput") Phone
-				input(type="text", id="newContactPhoneInput", placeholder="Phone", ng-model="newContact.phone")
-			div.form-group
-				label.sr-only(for="newContactEmailInput") Phone
-				input(type="text", id="newContactEmailInput", placeholder="Email", ng-model="newContact.email")		
-			button.btn.btn-primary(type="submit") Add Contact
+				tr(ng-repeat="contact in contacts")
+					td
+						| {{ contact.name }}
+					td
+						| {{ contact.phone }}
+					td
+						| {{ contact.email }}
+				tr
+					|<td><form class="form-inline" novalidate ng-submit="addNewContact()"><div class="form-group"><label class="sr-only" for="newContactNameInput">Name</label><input type="text" id="newContactNameInput" placeholder="Name" ng-model="newContact.name"></input></div></td>
+					|<td><div class="form-group"><label class="sr-only" for="newContactPhoneInput">Phone</label><input type="text" id="newContactPhoneInput" placeholder="Phone" ng-model="newContact.name"></input></div></td>
+					|<td><div class="form-group"><label class="sr-only" for="newContactEmailInput">Email</label><input type="text" id="newContactEmailInput" placeholder="Email" ng-model="newContact.name"></input>
+					|<button class="btn btn-primary" type="submit"> Add Contact</button></div></td>
+					|</form>
