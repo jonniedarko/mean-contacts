@@ -16,8 +16,6 @@
   "private": true,
   "dependencies": {
     "angular": "~1.2.10",
-    "bootstrap-javascript": "~2.3.2",
-    "bootstrap-css": "~3.0.0",
     "angular-bootstrap": "~0.10.0",
     "angular-scenario": "~1.2.10",
     "angular-mocks": "~1.2.10"

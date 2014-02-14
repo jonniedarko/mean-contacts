@@ -18,3 +18,9 @@ exports.addContact = function(contacts){
 		response.json({ contacts : contacts })
 	}
 }
+
+exports.contacts = function(){
+	return function(request, response){
+		response.render('contacts');
+	}
+}

@@ -1,0 +1,125 @@
+doctype html
+html.
+   <head>
+         <title>Food Tracker</title>
+         <link rel="stylesheet" href="/stylesheets/style.css">
+            <script type="text/javascript" src="/javascripts/vendor/angular/angular.js"></script>
+         
+        <script src="/javascripts/vendor/d3/d3.js"></script>
+        <script src="/javascripts/vendor/nvd3/nv.d3.js"></script>
+        <link rel="stylesheet" href="/javascripts/vendor/nvd3/nv.d3.css"/>
+        <script src="/javascripts/vendor/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+
+      
+
+         <script type="text/javascript" src="/javascripts/app.js"></script>
+         <link rel="stylesheet" href="/javascripts/vendor/bootstrap/dist/css/bootstrap.css">
+         <script type="text/javascript" src="/javascripts/controllers/FoodController.js"></script>
+      </head>
+      <body ng-app="foodApp">
+         <h1>Tracker</h1>
+         <div ng-controller="FoodController" ng-init="setMeals()" class="container">
+            <table id="meals_table" class="table">
+               <thead>
+                  <th>Meal</th>
+                  <th colspan="2">Description</th>
+                  <th>kcal</th>
+                  <th>Protein</th>
+                  <th>Carbs</th>
+                  <th>fats</th>
+               </thead>
+               <tbody>
+                  <tr ng-repeat="meal in meals">
+                     <td>{{ meal.name }}</td>
+                     <td colspan="2">{{ meal.description }}</td>
+                     <td>{{ meal.kcal }}</td>
+                    <td>{{ meal.nutrition.protein }}</td>
+                    <td>{{ meal.nutrition.carbs }}</td>
+                    <td>{{ meal.nutrition.fats }}</td>
+                  </tr>
+                  <tr class="info">
+                     <td></td>
+                     <td colspan="2"></td>
+                     <td><b>Total Kcals:</b></td>
+                     <td><b>Total Protein:</b></td>
+                    <td><b>Total Carbs:</b></td>
+                    <td><b>Total fats:</b></td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     <td colspan="2";></td>
+                     <td >{{totalKcals}}</td>
+                     <td >{{totalProtein}}</td>
+                     <td >{{totalCarbs}}</td>
+                     <td >{{totalFats}}</td>
+                  </tr>
+               </tbody>
+            <tfoot>
+              <tr>
+                  <td>
+
+
+                      <div class="form-group">
+                         <label for="newMealNameInput" class="sr-only">Name</label>
+                         <input required type="text" class="form-control" id="newMealNameInput" placeholder="Name" ng-model="newMeal.name">
+                      </div>
+                  </td>
+                  <td>
+                      <div class="form-group">
+                         <label for="newMealDescriptionInput" class="sr-only">Description</label>
+                         <input type="text" class="form-control" id="newMealDescriptionInput" placeholder="Description" ng-model="newMeal.description">
+                      </div>
+                   </td>
+                  <td>
+
+                      <div class="form-group">
+                         <label for="newMealKcalInput" class="sr-only">Kcal</label>
+                         <input required type="number" class="form-control" id="newMealKcalInput" placeholder="Kcal" ng-model="newMeal.kcal"  >
+                      </div>
+                   </td>
+                    <td>
+
+                      <div class="form-group">
+                         <label for="newMealProteinInput" class="sr-only">Kcal</label>
+                         <input required type="number" class="form-control" id="newMealProteinInput" placeholder="Protein(g)" ng-model="newMeal.nutrition.protein"  >
+                      </div>
+                   </td>
+                    <td>
+
+                      <div class="form-group">
+                         <label for="newMealCarbsInput" class="sr-only">Kcal</label>
+                         <input required type="number" class="form-control" id="newMealCarbsInput" placeholder="Carbs(g)" ng-model="newMeal.nutrition.carbs"  >
+                      </div>
+                   </td>
+                    <td>
+
+                      <div class="form-group">
+                         <label for="newMealFatsInput" class="sr-only">Fats</label>
+                         <input required type="number" class="form-control" id="newMealFatsInput" placeholder="Fats(g)" ng-model="newMeal.nutrition.fats"  >
+                      </div>
+                   </td>
+                  <td>
+
+                      <div class="form-group">
+                         <button type="submit" ng-click="addMeal()" class="btn btn-success" ng-disabled="newMealForm.$invalid"><i class="glyphicon-plus"></i> Add Meal</button>
+                         </div>
+
+                    </td>
+                </form>
+                <tr>
+              </tfoot>
+            </table>
+
+              <nvd3-pie-chart
+                  data="exampleData"
+                    id="exampleId"
+                    
+                    x="xFunction()"
+                    y="yFunction()"
+                    showLabels="true">
+                    <svg width="550"
+                    height="350"></svg>
+                </nvd3-pie-chart>
+
+         </div>
+      </body>

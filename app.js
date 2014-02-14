@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var food = require('./routes/food');
 var http = require('http');
 var path = require('path');
 
@@ -29,21 +30,23 @@ if ('development' == app.get('env')) {
 }
 
 var contacts = [ 
-  		{ 	name  : "Tommmy Jackson"
+  		{ 	name  : "Jackie Thompson"
   			,phone : "+353(086)932 6893"
   			,email : "tom13@gmail.com" 		
   		}
-  		,{ 	name  : "Mary Murphy"
+  		,{ 	name  : "Bruce Wayne"
   			,phone : "+353(087)362 9343"
   			,email : "mary.x@gmail.com" 		
   		}
-  		,{ 	name  : "Jack Jones"
+  		,{ 	name  : "Davey Jones"
   			,phone : "+353(085)234 1457"
   			,email : "tom13@gmail.com" 		
   		}
   	] ;
 
 app.get('/', routes.index(contacts));
+app.get('/contacts', routes.contacts());
+app.get('/tracker', food.foodIndex());
 app.get('/users', user.list);
 
 app.post('/contacts.json', routes.addContact(contacts));

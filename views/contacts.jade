@@ -1,0 +1,34 @@
+doctype html
+html.
+   <head>
+         <title>Express</title>
+         <link rel="stylesheet" href="/stylesheets/style.css">
+         <script type="text/javascript" src="/javascripts/vendor/angular/angular.js"></script><script type="text/javascript" src="/javascripts/app.js"></script>
+         <link rel="stylesheet" href="/javascripts/vendor/bootstrap-css/css/bootstrap.css">
+         <script type="text/javascript" src="/javascripts/controllers/ContactsController.js"></script>
+      </head>
+      <body ng-app="contactsApp">
+         <h1>My Contacts</h1>
+         <div ng-controller="ContactsController" ng-init="setContacts(null)" class="container">
+            <table id="contacts_table" class="table">
+               <thead>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+               </thead>
+               <tbody>
+                  <tr ng-repeat="contact in contacts">
+                     <td>{{ contact.name }}</td>
+                     <td>{{ contact.phone }}</td>
+                     <td>{{ contact.email }}</td>
+                  </tr>
+               </tbody>
+            </table>
+            <form novalidate ng-submit="addNewContact()" class="form-horizontal">
+               <div class="form-group"><label for="newContactNameInput" class="sr-only">Name</label><input type="text" id="newContactNameInput" placeholder="Name" ng-model="newContact.name"></div>
+               <div class="form-group"><label for="newContactPhoneInput" class="sr-only">Phone</label><input type="text" id="newContactPhoneInput" placeholder="Phone" ng-model="newContact.phone"></div>
+               <div class="form-group"><label for="newContactEmailInput" class="sr-only">Phone</label><input type="text" id="newContactEmailInput" placeholder="Email" ng-model="newContact.email"></div>
+               <button type="submit" class="btn btn-primary">Add Contact</button>
+            </form>
+         </div>
+      </body>
