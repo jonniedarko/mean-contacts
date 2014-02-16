@@ -11,3 +11,9 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+/* Custom container */
+.container-full {
+  margin: 0;
+  padding: 5px;
+   width: 100%;
+}

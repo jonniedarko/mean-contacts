@@ -4,17 +4,6 @@ app.controller('FoodController', function ($scope){
 
 
 $scope.exampleData = [ ];
-
-$scope.xFunction = function(){
-    return function(d) {
-        return d.key;
-    };
-}
-$scope.yFunction = function(){
-	return function(d){
-		return d.y;
-	};
-}
 	$scope.totalKcals = 0;
 	$scope.totalProtein =0;
 	$scope.totalCarbs =0;

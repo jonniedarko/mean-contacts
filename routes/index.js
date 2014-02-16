@@ -24,3 +24,10 @@ exports.contacts = function(){
 		response.render('contacts');
 	}
 }
+
+exports.mobile = function(){
+	return function (request, response){
+	  response.render('mobile');
+   
+  };
+};

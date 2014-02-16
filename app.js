@@ -47,7 +47,9 @@ var contacts = [
 app.get('/', routes.index(contacts));
 app.get('/contacts', routes.contacts());
 app.get('/tracker', food.foodIndex());
+app.get('/trackerm', food.foodIndexMobile());
 app.get('/users', user.list);
+app.get('/m', routes.mobile());
 
 app.post('/contacts.json', routes.addContact(contacts));
 

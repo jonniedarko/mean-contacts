@@ -6,3 +6,12 @@ exports.foodIndex = function(){
    
   };
 };
+
+exports.foodIndexMobile = function(){
+	return function (request, response){
+	  response.render('foodmobile', {
+	    title: 'Food Tracker Mobile'
+	  });
+   
+  };
+};

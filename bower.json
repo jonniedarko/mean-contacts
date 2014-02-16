@@ -18,6 +18,7 @@
     "angular": "~1.2.10",
     "angular-bootstrap": "~0.10.0",
     "angular-scenario": "~1.2.10",
-    "angular-mocks": "~1.2.10"
+    "angular-mocks": "~1.2.10",
+    "bootstrap": "~3.1.1"
   }
 }
